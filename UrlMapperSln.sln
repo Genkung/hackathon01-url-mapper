@@ -11,7 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlMapper.Implement", "UrlM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlMapper.Tests", "UrlMapper.Tests\UrlMapper.Tests.csproj", "{43D2E856-E070-417A-B460-D60E0C9960D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile.Android", "Mobile\Mobile.Android\Mobile.Android.csproj", "{9D20EE47-1016-4492-8ABB-6126251CA086}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mobile", "Mobile\Mobile\Mobile.shproj", "{8F14E0D3-D0DA-4A05-A486-2A6CAAF88E2C}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Mobile\Mobile\Mobile.projitems*{8f14e0d3-d0da-4a05-a486-2a6caaf88e2c}*SharedItemsImports = 13
+		Mobile\Mobile\Mobile.projitems*{9d20ee47-1016-4492-8abb-6126251ca086}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -69,6 +77,24 @@ Global
 		{43D2E856-E070-417A-B460-D60E0C9960D0}.Release|x64.Build.0 = Release|Any CPU
 		{43D2E856-E070-417A-B460-D60E0C9960D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{43D2E856-E070-417A-B460-D60E0C9960D0}.Release|x86.Build.0 = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|x64.Build.0 = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|x86.Build.0 = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|x64.ActiveCfg = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|x64.Build.0 = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|x64.Deploy.0 = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|x86.ActiveCfg = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|x86.Build.0 = Release|Any CPU
+		{9D20EE47-1016-4492-8ABB-6126251CA086}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
