@@ -10,8 +10,8 @@ namespace ConsoleForPharseUrl
         static ISimpleStringParameterBuilder pharser;
         static void Main(string[] args)
         {
-            var myPlattern = "https://mana.com/nana/{app/-id}/services/services/{service-id}";
-            var myText = "https://mana.com/nana/Asd/services/services/ZXC";
+            var myPlattern = "http://hackathon.com";
+            var myText = "http://hackathon.com/";
 
             //var myPlattern = "http://hackathon.com/{username}aa/none";
             //var myText = "http://hackathon.com/test*123/none";

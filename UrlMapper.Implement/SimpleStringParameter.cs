@@ -25,6 +25,20 @@ namespace UrlMapper.Implement
             if (originalPattern == null || textToCompare == null) return false;
             if (keys == null || keys.Count == 0)
             {
+                if (!string.IsNullOrEmpty(textToCompare))
+                {
+                    if (textToCompare.Last() == '/')
+                    {
+                        textToCompare = textToCompare.Remove(textToCompare.LastIndexOf('/'));
+                    }
+                }
+                if (!string.IsNullOrEmpty(originalPattern))
+                {
+                    if (originalPattern.Last() == '/')
+                    {
+                        originalPattern = originalPattern.Remove(originalPattern.LastIndexOf('/'));
+                    }
+                }
 
                 if (textToCompare == originalPattern) return true;
                 else return false;
