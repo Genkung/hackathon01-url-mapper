@@ -23,26 +23,13 @@ namespace UrlMapper.Implement
         public bool IsMatched(string textToCompare)
         {
             if (originalPattern == null || textToCompare == null) return false;
+
             if (keys == null || keys.Count == 0)
             {
-                if (!string.IsNullOrEmpty(textToCompare))
-                {
-                    if (textToCompare.Last() == '/')
-                    {
-                        textToCompare = textToCompare.Remove(textToCompare.LastIndexOf('/'));
-                    }
-                }
-                if (!string.IsNullOrEmpty(originalPattern))
-                {
-                    if (originalPattern.Last() == '/')
-                    {
-                        originalPattern = originalPattern.Remove(originalPattern.LastIndexOf('/'));
-                    }
-                }
-
                 if (textToCompare == originalPattern) return true;
                 else return false;
             };
+
             if (pathToCompare.Count == 0 || pathToCompare == null) return false;
 
             var preIndex = -2;
@@ -57,10 +44,13 @@ namespace UrlMapper.Implement
 
         public void ExtractVariables(string target, IDictionary<string, string> dicToStoreResults)
         {
-            var values = target.Split(pathToCompare.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+            //if (!IsMatched(target)) return;
+            if (string.IsNullOrEmpty(target) || string.IsNullOrWhiteSpace(target)) return;
+            var values = target.Split(pathToCompare.ToArray(), StringSplitOptions.None);
+            if (values == null ||  values.Count() == 0) return;
             for (int i = 0; i < keys.Count; i++)
             {
-                dicToStoreResults.Add(keys[i], values[i]);
+                dicToStoreResults.Add(keys[i], values[i+1]);
             }
         }
 
@@ -73,11 +63,6 @@ namespace UrlMapper.Implement
                 if (pattern.Contains("{") && pattern.Contains("}"))
                 {
                     key = pattern.Substring(pattern.IndexOf("{"), pattern.IndexOf("}") - pattern.IndexOf("{") + 1);
-                    if (keys.Any(x => x == key))
-                    {
-                        keys = null;
-                        return;
-                    }
                     var splitPattern = pattern.Split(new string[] { key }, StringSplitOptions.None);
                     keys.Add(key);
                     pathToCompare.Add(splitPattern.FirstOrDefault());
