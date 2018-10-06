@@ -15,10 +15,13 @@ namespace ConsoleForPharseUrl
 
             var builder = new UrlMapper.Implement.SimpleStringParameterBuilder();
             var mypraser = builder.Parse(myPlattern) as SimpleStringParameter;
-            foreach(var item in mypraser.keys)
+            var inMact = mypraser.IsMatched(myText);
+            if (inMact)
             {
-                Console.WriteLine(item);
+                var dicResult = new Dictionary<string, string>();
+                mypraser.ExtractVariables(myText, dicResult);
             }
+            Console.WriteLine(inMact);
         }
     }
 }
