@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UrlMapper.Implement\UrlMapper.Implement.csproj" />
     <ProjectReference Include="..\UrlMapper\UrlMapper.csproj" />
   </ItemGroup>
 

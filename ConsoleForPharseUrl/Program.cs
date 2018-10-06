@@ -13,6 +13,9 @@ namespace ConsoleForPharseUrl
             var myPlattern = "https://mana.com/nana/{app/-id}/services/services/{service-id}";
             var myText = "https://mana.com/nana/Asd/services/services/ZXC";
 
+            //var myPlattern = "http://hackathon.com/{username}aa/none";
+            //var myText = "http://hackathon.com/test*123/none";
+
             var builder = new UrlMapper.Implement.SimpleStringParameterBuilder();
             var mypraser = builder.Parse(myPlattern) as SimpleStringParameter;
             var inMact = mypraser.IsMatched(myText);
