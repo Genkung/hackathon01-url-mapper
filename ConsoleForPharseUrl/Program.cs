@@ -10,8 +10,8 @@ namespace ConsoleForPharseUrl
         static ISimpleStringParameterBuilder pharser;
         static void Main(string[] args)
         {
-            var myPlattern = "https://mana.com/app/{app-id}/services/{service-id}";
-            var myText = "https://mana.com/nana/di394/services/services/878";
+            var myPlattern = "https://mana.com/nana/{app/-id}/services/services/{service-id}";
+            var myText = "https://mana.com/nana/Asd/services/services/ZXC";
 
             var builder = new UrlMapper.Implement.SimpleStringParameterBuilder();
             var mypraser = builder.Parse(myPlattern) as SimpleStringParameter;

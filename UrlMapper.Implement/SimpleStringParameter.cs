@@ -12,8 +12,7 @@ namespace UrlMapper.Implement
 
         public SimpleStringParameter(string pattern)
         {
-            var nextpattern = SetKeys(pattern);
-            SetPathToCompare(nextpattern);
+            SetKeys(pattern);
         }
 
         public bool IsMatched(string textToCompare)
@@ -26,7 +25,7 @@ namespace UrlMapper.Implement
             throw new System.NotImplementedException();
         }
 
-        public string SetKeys(string pattern)
+        public void SetKeys(string pattern)
         {
             string key;
             do
@@ -35,18 +34,14 @@ namespace UrlMapper.Implement
                 if (pattern.Contains("{") && pattern.Contains("}"))
                 {
                     key = pattern.Substring(pattern.IndexOf("{"), pattern.IndexOf("}") - pattern.IndexOf("{") + 1);
-                    pattern = pattern.Remove(pattern.IndexOf("{"), pattern.IndexOf("}") - pattern.IndexOf("{") + 1);
+                    var splitPattern = pattern.Split(new string[] { key }, StringSplitOptions.None);
                     keys.Add(key);
+                    pathToCompare.Add(splitPattern.FirstOrDefault());
+                    pattern = splitPattern.LastOrDefault();
                 }
-                if (string.IsNullOrEmpty(key)) return pattern;
+                if (string.IsNullOrEmpty(key)) return;
             }
             while (true);
         }
-
-        public void SetPathToCompare(string pattern)
-        {
-
-        }
-
     }
 }
